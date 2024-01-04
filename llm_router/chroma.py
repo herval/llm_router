@@ -2,7 +2,7 @@ from typing import Optional
 
 import chromadb
 
-from lib import Engine
+from llm_router import Engine
 from chromadb.utils import embedding_functions
 
 

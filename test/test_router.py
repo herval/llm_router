@@ -1,8 +1,8 @@
 import os
 import unittest
 
-from lib import Router, Route
-from lib.chroma import SentenceTransformer, OpenAI
+from llm_router import Router, Route
+from llm_router.chroma import SentenceTransformer, OpenAI
 
 
 class TestRouter(unittest.TestCase):
@@ -10,7 +10,6 @@ class TestRouter(unittest.TestCase):
     def test_transformer_router(self):
         router = Router(
             engine=SentenceTransformer(
-                cache_path="./test_transformer_cache",
                 threshold=0.4,
                 model_name='all-distilroberta-v1',
             ),
