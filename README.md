@@ -4,7 +4,7 @@ A fast semantic router using Embeddings.
 
 LLM Router lets you define "routes" - sets of sentences or keywords with similar semantics. You can then use these routes to route a user's input to the appropriate LLM (or other model) for a response, leading to faster inference and better results. It's a faster and more efficient alternative to using a single LLM for all responses or letting a single LLM choose function calls.
 
-It can work entirely locally using [sentence_transformers](https://huggingface.co/sentence-transformers) (cheaper but less accurate) or using OpenAI's API.
+It can work entirely locally using [sentence_transformers](https://huggingface.co/sentence-transformers) or using OpenAI's API.
 
 Important: results WILL vary between openai and the sbert/sentence-transformer model you pick. You'll need to experiment to find the best model for your use case, as well as adjusting the threshold for your needs.
 
