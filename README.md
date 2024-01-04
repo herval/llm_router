@@ -6,6 +6,7 @@ LLM Router lets you define "routes" - sets of sentences or keywords with similar
 
 It can work entirely locally using [sentence_transformers](https://huggingface.co/sentence-transformers) (cheaper but less accurate) or using OpenAI's API.
 
+Important: results WILL vary between openai and the sbert/sentence-transformer model you pick. You'll need to experiment to find the best model for your use case, as well as adjusting the threshold for your needs.
 
 ## But why?
 This code was created as part of Clio AI (my most recent startup) - the idea then was to allow selecting the best "agent" to handle a certain conversation based on the semantics of what the user is saying, which allowed us to use "lesser" models like GPT-3.5 instead of GPT-4 to respond with the appropriate set of system prompt, function calls, etc. In some cases, it allows you to skip LLMs altogether, saving time and $$$.
@@ -29,7 +30,7 @@ Define routes in code and use the router like so:
 
 ```python
 from llm_router import Router, Route
-from llm_router.transformers_engine import SentenceTransformersEngine
+from llm_router.chroma import SentenceTransformer
 
 router = Router(
     engine=SentenceTransformersEngine(
